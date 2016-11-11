@@ -15,12 +15,6 @@ $getfield = "?screen_name=$user&count=$count";
 
 
 
-$twitter = new TwitterAPIExchange($settings);
-
-$test = file_get_contents("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=iagdotme&count=50");
-
-echo $test;
-
 $string = json_decode($twitter->setGetfield($getfield)
 ->buildOauth($url, $requestMethod)
 ->performRequest(),$assoc = TRUE);
